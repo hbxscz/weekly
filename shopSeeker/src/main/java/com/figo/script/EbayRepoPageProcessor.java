@@ -5,14 +5,12 @@ import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.pipeline.ConsolePipeline;
-import us.codecraft.webmagic.pipeline.FilePipeline;
-import us.codecraft.webmagic.pipeline.JsonFilePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 
 /**
  * Created by figo on 14/11/2.
  */
-public class BeibaotuRepoPageProcessor implements PageProcessor {
+public class EbayRepoPageProcessor implements PageProcessor {
 
     // 部分一：抓取网站的相关配置，包括编码、抓取间隔、重试次数等
     private Site site = Site.me().setRetryTimes(3).setSleepTime(1000);
@@ -43,7 +41,7 @@ System.out.println(resultItems.toString());
 
     public static void main(String[] args) {
 
-        Spider.create(new BeibaotuRepoPageProcessor())
+        Spider.create(new EbayRepoPageProcessor())
                 //从"http://www.beibaotu.com/items"开始抓
                 .addUrl("http://www.beibaotu.com/items")
                 .addPipeline(new ConsolePipeline())
