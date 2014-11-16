@@ -4,7 +4,33 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <div id="header">
 	<div id="title">
-	    <h1><a href="${ctx}">XiaoPan</a><small>演示</small>
+	    <h3>
+            <div class="navbar">
+                <div>
+                    <ul class="nav">
+                        <li><a href="#">XiaoPan</a></li>
+                        <li><a href="#">eBay</a></li>
+                        <li><a href="#">About</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               href="#">
+                                Dropdown
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- links -->
+                                <li><a tabindex="-1" href="#">Action</a></li>
+                                <li><a tabindex="-1" href="#">Another action</a></li>
+                                <li><a tabindex="-1" href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <small>演示</small>
 	    <shiro:user>
 			<div class="btn-group pull-right">
 				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -22,6 +48,6 @@
 				</ul>
 			</div>
 		</shiro:user>
-		</h1>
+		</h3>
 	</div>
 </div>
