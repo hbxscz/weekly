@@ -28,7 +28,7 @@
 		<c:forEach items="${keywords.content}" var="keyword">
 			<tr>
                 <td><a href="${ctx}/keyword/update/${keyword.id}">${keyword.value}</a></td>
-				<td><a href="${ctx}/keyword/update/${keyword.id}">${keyword.sku}</a></td>
+				<td><a href="${ctx}/item?search_EQ_sku=${keyword.sku}">${keyword.sku}</a></td>
                 <td><a href="${ctx}/keyword/update/${keyword.id}">${keyword.active}</a></td>
 				<td><a href="${ctx}/keyword/delete/${keyword.id}">删除</a></td>
 			</tr>

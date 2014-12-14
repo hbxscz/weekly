@@ -57,7 +57,7 @@
           <element id="library" level="project" name="Maven: org.slf4j:log4j-over-slf4j:1.7.5" />
           <element id="library" level="project" name="Maven: org.slf4j:jul-to-slf4j:1.7.5" />
           <element id="library" level="project" name="Maven: org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4:1.15" />
-          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.1" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.3.2" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:14.0.1" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.3.4" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.3.2" />
