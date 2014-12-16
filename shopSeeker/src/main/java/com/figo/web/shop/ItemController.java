@@ -141,15 +141,31 @@ public class ItemController {
         Collections.sort(purchaseList, comparator);
         List<Map> data = new ArrayList<Map>();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Set haddealDate = new HashSet();
         try {
             for (Purchase purchase : purchaseList) {
                 System.out.println("~~~~~~~~~~~~date " + purchase.getPurchaseDate());
                 Map<String, Object> row = new HashMap();
                 String purchaseDate = format.format(new SimpleDateFormat(
-                            "MMMM-dd-yy HH:mm:ss", Locale.ENGLISH).parse(purchase.getPurchaseDate()));
-                row.put("name", purchaseDate);
-                row.put("y", purchase.getQty());
-                data.add(row);
+                            "MMM-dd-yy HH:mm:ss z", Locale.ENGLISH).parse(purchase.getPurchaseDate()));
+                String date = purchaseDate.split(" ")[0];
+                System.out.println("~~~~~~~~~~~~date " + date);
+                int qty = purchase.getQty();
+                if (!haddealDate.contains(date)) {
+                    row.put("name", date);
+                    row.put("y", qty);
+                    data.add(row);
+                } else {
+                    for (Map map : data) {
+                         if (date.equals(map.get("name"))) {
+                             int oldQty = Integer.valueOf(map.get("y").toString());
+                             System.out.println("~~~~~~" + oldQty);
+                             map.put("y", qty + oldQty);
+                         }
+                    }
+                }
+                haddealDate.add(date);
+
             }
             ObjectMapper objectMapper = new ObjectMapper();
             model.addAttribute("data", objectMapper.writeValueAsString(data));

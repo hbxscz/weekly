@@ -14,7 +14,7 @@ public class PurchaseComparator implements Comparator {
     public int compare(Object o1, Object o2) {
         Purchase p1 = (Purchase) o1;
         Purchase p2 = (Purchase) o2;
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
+        SimpleDateFormat format = new SimpleDateFormat("MMM-dd-yy HH:mm:ss z", Locale.ENGLISH);
         int flag = 0;
         try {
             Date d1 = format.parse(p1.getPurchaseDate());
